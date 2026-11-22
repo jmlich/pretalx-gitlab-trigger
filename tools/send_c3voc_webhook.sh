@@ -7,7 +7,7 @@
 #   SUBMISSION_ID  the "id" of a talk in schedule.json, list them with:
 #                  curl -s PRETALX_URL/EVENT_SLUG/schedule/export/schedule.json \
 #                    | jq -r '.schedule.conference.days[].rooms[][] | "\(.id) \(.code) \(.title)"'
-#   VIDEO_URL      e.g. https://peertube.example.org/w/abc123
+#   VIDEO_URL      e.g. https://vhsky.cz/w/gNAiHGp2CXdb1HBH7X6FBh
 
 set -e
 set -o pipefail
