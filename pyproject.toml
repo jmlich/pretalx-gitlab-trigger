@@ -45,7 +45,7 @@ version = {attr = "pretalx_gitlab_trigger.__version__"}
 include = ["pretalx*"]
 
 [tool.check-manifest]
-ignore = [".*", "tests/*", "justfile"]
+ignore = [".*", "tests/*", "tools/*", "justfile"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "pretalx.common.settings.test_settings"
