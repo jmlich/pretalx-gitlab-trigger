@@ -1,0 +1,2 @@
+recursive-include pretalx_gitlab_trigger *.py
+include justfile
