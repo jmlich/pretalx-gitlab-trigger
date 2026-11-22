@@ -31,7 +31,9 @@ def test_schedule_release_triggers_pipeline(event, trigger_url):
     assert urlopen.call_args.args[0].method == "POST"
 
 
-def test_resource_changes_trigger_pipeline(event, confirmed_submission, trigger_url, django_capture_on_commit_callbacks):
+def test_resource_changes_trigger_pipeline(
+    event, confirmed_submission, trigger_url, django_capture_on_commit_callbacks
+):
     with (
         patch.object(signals.urllib.request, "urlopen") as urlopen,
         django_capture_on_commit_callbacks(execute=True),
@@ -79,7 +81,9 @@ def test_missing_url_does_not_trigger(event, settings):
 
 
 def test_failed_request_is_logged_without_token(event, trigger_url, caplog):
-    with patch.object(signals.urllib.request, "urlopen", side_effect=OSError(TRIGGER_URL)):
+    with patch.object(
+        signals.urllib.request, "urlopen", side_effect=OSError(TRIGGER_URL)
+    ):
         signals.trigger_pipeline(event)
     assert "GitLab trigger failed for event test" in caplog.text
     assert "secret" not in caplog.text

@@ -9,7 +9,12 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
-        print(dt.datetime.now().isoformat(timespec="seconds"), self.command, self.path, flush=True)  # noqa: T201, DTZ005
+        print(
+            dt.datetime.now().isoformat(timespec="seconds"),
+            self.command,
+            self.path,
+            flush=True,
+        )
         self.send_response(201)
         self.end_headers()
 

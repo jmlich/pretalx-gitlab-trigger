@@ -96,6 +96,11 @@ ignore = [
 allowed-confusables = ["–", "'", "×"]
 
 [tool.ruff.lint.per-file-ignores]
+"tools/**.py" = [
+  "DTZ",     # Local time is fine in a manual test tool
+  "INP001",  # Scripts, not a package
+  "T201",    # Printing is the point of the tool
+]
 "tests/**.py" = [
   "DTZ",     # TODO: do not use naive datetimes in tests
   "INP001",  # Tests don't need __init__.py
